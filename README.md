@@ -1,7 +1,7 @@
 # interior_point_lp
 Interior Point Method for Linear Programming Problem
 ----
-
+**For better read experience, download or clone this project, and read this file locally**
 
 ## running requirements
 
