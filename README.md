@@ -7,7 +7,7 @@ Interior Point Method for Linear Programming Problem
 
 * GCC version supports at leat C++ standard 11
 
-* C++ Eigen Library, version 3.3.7, (already included in this project)
+* C++ Eigen Library, version 3.3.7,(already included in this project)
 
 ## explaination
 
