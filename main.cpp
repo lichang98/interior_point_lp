@@ -83,6 +83,8 @@ int main(int argc, char const *argv[])
     Eigen::MatrixXd pre_best(2, 1), valid_best_point(2, 1);
     pre_best << x0, y0;
     int iter_count = 0, max_loop = 8000;
+    std::vector<std::pair<double,double>> points;
+    points.push_back(std::make_pair(x0,y0));
     while (flag && max_loop-- > 0)
     {
         X << x0, y0;
@@ -103,6 +105,7 @@ int main(int argc, char const *argv[])
             flag = true;
             iter_count = 0;
             pre_reset = true;
+            points.push_back(std::make_pair(x0,y0));
         }
         else
         {
@@ -110,6 +113,11 @@ int main(int argc, char const *argv[])
         }
         ++iter_count;
         t += 0.1;
+    }
+    std::cout << "history start points change records:" << std::endl;
+    for(std::pair<double,double> vals : points)
+    {
+        std::cout << vals.first << ", " << vals.second << std::endl;
     }
     return 0;
 }

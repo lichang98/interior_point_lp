@@ -67,3 +67,7 @@ Then, in order to get the direction in iterations, $X^{(n+1)}=X^{(n)}-Hessian^{-
 For each $x$ in $X$, $\nabla f_{x_k}=tc_k-\sum\limits_{i=1}^{m}\frac{A_{ik}}{A_{ij}X_j-b_i}$, we can vectorize it, $\nabla f=tc-A^{T} \frac{1}{AX-b}$, and $\nabla^2 f=A^T D A$,where $D$ is diagonal matrix with values $\frac{1}{(Ax-b)^2}$.
 
 Now, all the needed variables are calculated, when using this algorithm, we need to find a start point. In this project we choose $(3,3)$, and $t=0.1$. By running this algorithm, the return value *best_point* will be closer to $0,0$ during iteration. However, the result will stuck at aboud$(0.58,0.58)$. In this case, we reset start point as current point and reset $t=0.1$, and then continue. The algorithm will stop at a satisfying result.
+
+![cov](convergence.png)
+
+Each point in the above graph is a change of the start point in the algorithm. We can see that the algorithm converges to $(0,0)$ steady.
