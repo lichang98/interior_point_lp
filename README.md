@@ -13,11 +13,11 @@ Interior Point Method for Linear Programming Problem
 
 In this project, the sample target function is
 
-$\min\ \  x+y\\
+$$\min\ \  x+y\\
 s.t.\ \ x+2y \leq 10\\
-\ \ \ \ \ \  2x+y\leq 1\\
-\ \ \ \ \ \ x \geq 0\\
-\ \ \ \ \ \ y \geq 0$
+\ \ \ \ 2x+y\leq 1\\
+\ \ \ \  x \geq 0\\
+\ \ \ \ y \geq 0$$
 
 The image of this problem is as follows.
 
@@ -47,26 +47,26 @@ Let $c=\left(\begin{matrix}
 
 Then, the problem can be written as
 
-$
+$$
 \min\ \  c^T X\\
 s.t.\ \ AX \leq b
-$
+$$
 
 Applying Lagrange, we can get $f(x)=c^TX+\sum\limits_{i=1}^{m}I(A_jX_j-b)$, where $m$ is the first dimension size of $A$. We can learn from the target that, when $AX > b$ is not valid. So, 
 
-$I(x)=\left\{\begin{matrix}
+$$I(x)=\left\{\begin{matrix}
     x, & x \leq 0\\
     +\infty,& x > 0
-\end{matrix}\right.$
+\end{matrix}\right.$$
 then the minumum result achieved must be valid. However, this function indifferentiable points, a common method is using $\log$ function to approximate it. In this project, we use $-\frac{1}{t}log(-x)$, where $t$ is a tunable parameter, the larger the $t$, the more the func tie to the x coordinate and y coordinate at the same time more punish value for not valid x and nearly 0 for all valid x. And in this project, we will increase $t$ dynamically.
 
 ![log_img](log_func.png)
 
 We can then rewrite the target function as:
 
-$
+$$
 f(x)=tc^TX-\sum\limits_{i=1}^{m}\log(-A_{ij}X_j+b_i)
-$
+$$
 
 Then, in order to get the direction in iterations, $X^{(n+1)}=X^{(n)}-Hessian^{-1}\nabla f$, we need to calculate the first order derivative and second order detivate.
 
