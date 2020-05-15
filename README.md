@@ -15,7 +15,7 @@ In this project, the sample target function is
 
 $$\min\ \  x+y\\
 s.t.\ \ x+2y \leq 10\\
-\ \ \ \ 2x+y\leq 1\\
+\ \ \ \ 2x+y\leq 10\\
 \ \ \ \  x \geq 0\\
 \ \ \ \ y \geq 0$$
 
